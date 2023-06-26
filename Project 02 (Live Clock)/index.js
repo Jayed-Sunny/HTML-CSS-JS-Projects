@@ -1,18 +1,17 @@
 const hourEl = document.getElementById("hour")
 const minuteEl = document.getElementById("minute")
 const secondEl = document.getElementById("second")
-const ampmEl = document.getElementById("ampm")
+let ampmEl = document.getElementById("ampm")
 
 function updateClock() {
     let now = new Date()
     let s = now.getSeconds()
     let m = now.getMinutes()
     let h = now.getHours()
-    let ampm = "AM"
 
     if (h>12) {
         h = h -12
-        ampm = "PM"
+        ampmEl.innerText = "PM"
     }
 
     h = h < 10 ? "0" + h : h;
